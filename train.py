@@ -1,4 +1,3 @@
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -7,30 +6,28 @@ from utils import evaluate_clustering, save_results
 from tqdm.auto import tqdm
 import numpy as np
 
-def train_autoencoder(model, dataloader, device, lr=0.0005, epochs=250):
+def train_autoencoder(model, dataloader, device, lr=0.0005, epochs=250, verbose=True):
     model.to(device)
     optimizer = optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss(reduction='none')
     model.train()
-    
-    for epoch in tqdm(range(epochs), desc="Training AE"):
-        avg_loss  = 0
+    epoch_range = tqdm(range(epochs), desc="Training AE") if verbose else range(epochs)
+
+    for epoch in epoch_range:
         epoch_loss = 0
-        for batch,x in enumerate(dataloader):
+        for batch, x in enumerate(dataloader):
             x = x.float().to(device)
-            mask=(x!= -1).float()
+            mask = (x != -1).float()
             x_hat, _ = model(x)
             optimizer.zero_grad()
             loss = criterion(x_hat, x)
             loss = loss * mask
             loss = loss.sum() / mask.sum()
-
             loss.backward()
             optimizer.step()
-
             epoch_loss += loss.item()
         avg_loss = epoch_loss / len(dataloader)
-        # Optional: print or log epoch loss here
+        # Optionally log avg_loss here if needed
     return model
 
 
@@ -39,17 +36,17 @@ def run_clustering(model, full_data_tensor, n_clusters=5):
     with torch.no_grad():
         device = next(model.parameters()).device
 
-        # 인코더 출력
+        # Encoder output
         latent_feature = model.encoder(full_data_tensor.to(device)).cpu().numpy()
 
-        # 디코더 출력
+        # Decoder layer output
         _, decoder_outputs = model(full_data_tensor.to(device))
-        decoder_output_0 = decoder_outputs[0].cpu().detach().numpy()  # 첫 번째 디코더 레이어 출력
+        decoder_output_0 = decoder_outputs[0].cpu().detach().numpy()
 
-        # 결합: latent + decoder layer 1
+        # Concatenate latent + decoder output
         combined_features = np.concatenate((latent_feature, decoder_output_0), axis=1)
 
-    # 클러스터링
+    # Bayesian Gaussian Mixture clustering
     bgmm = BayesianGaussianMixture(n_components=n_clusters, max_iter=500, n_init=10, random_state=42)
     pred_labels = bgmm.fit_predict(combined_features)
     return pred_labels
