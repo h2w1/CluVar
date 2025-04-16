@@ -9,7 +9,7 @@ This repository contains PyTorch code for clustering single-cell RNA sequencing 
 - `train.py` – Training and clustering functions.
 - `dataset.py` – Loads scRNA-seq data.
 - `utils.py` – Utility functions like seed fixing, ARI evaluation, and result saving.
-- `search_hyperparams.py` – (Optional) Searches for the best hyperparameter configuration based on loss and ARI.
+- `search_hyperparams.py` – (Optional) Searches for the best hyperparameter configuration based on loss.
 - `requirements.txt` – Required Python packages.
 
 
