@@ -25,11 +25,11 @@ This repository contains PyTorch code for clustering single-cell RNA sequencing 
 3. Run:
     ```bash
    ## For Simulation Data, you can use promt below
-    python main.py --data_type 'sim'--num_feature 300 --learning_rate 0.0005 --epochs 250 --num_clusters 7 --init_type Xavier
+    python main.py --data_type 'sim' --learning_rate 0.0005 --num_clusters 7 --init_type 'Xavieru' --activation_type 'ELU'
     ```
    ```bash
    ## For Real Data, you can use promt below
-    python main.py --data_type 'merged' --num_feature 300 --learning_rate 0.0005 --epochs 250 --num_clusters 7 --init_type Xavier
+    python main.py --data_type 'merged' --learning_rate 0.0005 --num_clusters 7 --init_type 'Xavieru' --activation_type 'ELU'
     ```
 
 
@@ -46,7 +46,7 @@ CluVar supports automatic hyperparameter search using `search_hyperparams.py`.
 This script evaluates different combinations of initialization types, activation functions, and learning rates, and recommends the top 3 configurations based on reconstruction loss.
 
 > ⚠️ Note: This search can take a long time.  
-> You can skip it and directly run `main.py` using the recommended parameters shown ubove (`--learning_rate 0.0005`, `--init_type Xavier`, etc.)
+> You can skip it and directly run `main.py` using the recommended parameters shown ubove (`--learning_rate 0.0005`, `--init_type Xavieru`, etc.)
 
 ### To run the hyperparameter search:
 

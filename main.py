@@ -43,12 +43,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_type", type=str, default="sim", help="Type of data: 'sim' or 'real'")
     parser.add_argument("--num_feature", type=int, default=300, help="Number of input features")
-    parser.add_argument("--learning_rate", type=float, default=0.001, help="Learning rate for optimizer")
+    parser.add_argument("--learning_rate", type=float, default=0.0005, help="Learning rate for optimizer")
     parser.add_argument("--epochs", type=int, default=250, help="Number of training epochs")
     parser.add_argument("--num_clusters", type=int, default=7, help="Number of clusters for BGMM")
     parser.add_argument("--latent_dim", type=int, default=10, help="Latent dimension size")
     parser.add_argument("--batch_size", type=int, default=64, help="Batch size")
-    parser.add_argument("--init_type", type=str, default="Xavier",
+    parser.add_argument("--init_type", type=str, default="Xavieru",
                         help="Weight initialization method: Normal | Xavier | Xavieru | He | Kaiming_Uniform")
     parser.add_argument("--activation_type", type=str, default="leaky_relu",
                         help="Activation function: ELU | leaky_relu")
