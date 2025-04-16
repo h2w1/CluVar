@@ -1,4 +1,4 @@
-# CluVar: Clustering of Variants using autoencoder for inferring the phylogeny of cancer subclones from single cell RNA sequencing data
+# CluVar : Clustering of variants using Autoencoder for inferring cancer subclones from single cell RNA sequencing data 
 
 This repository contains PyTorch code for clustering single-cell RNA sequencing (scRNA-seq) data using CluVar.
 
