@@ -1,0 +1,16 @@
+name: cluvar-autoencoder-env
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - tqdm
+  - pip:
+    - numpy==1.26.4  # pip 안에서 numpy 다운그레이드
+    - pandas==1.5.3
+    - scikit-learn==1.2.2
+    - torch==2.1.0+cu121
+    - torchvision==0.16.0+cu121
+    - torchaudio==2.1.0+cu121
+    - lightning
+    - --extra-index-url https://download.pytorch.org/whl/cu121
