@@ -1,0 +1,17 @@
+# Snakemake cache and conda environments
+.snakemake/
+*.sif
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# 환경 관련
+#envs/
+.venv/
+
+# Jupyter 관련 무시 항목
+.ipynb_checkpoints/
+*.ipynb~
+
+results/
