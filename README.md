@@ -12,8 +12,9 @@ conda activate CluVar-env
 ```
 
 clone the recent version of this repository.
-
-
+```bash
+git clone https://github.com/h2w1/CluVar.git
+```
 
 
 
