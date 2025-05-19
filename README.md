@@ -25,47 +25,87 @@ please download below directories and file on main CluVar directory and keep the
 from https://drive.google.com/drive/folders/1bsQ4hoIcGslJMSlu_IYB5O3j5I-WFJ70?usp=drive_link
 
 After download files, your CluVar directory is below. please check below tree.
-.
-├── bio_pipeline.sif \n
+
+├── bio_pipeline.sif 
+
 ├── config
+
 │   └── config_test.yaml
+
 ├── envs
+
 │   ├── ae.yaml
+
 │   ├── minimap2.yaml
+
 │   └── python.yaml
+
 ├── intervals.list
+
 ├── README.md
+
 ├── reference
+
 │   ├── refdata-gex-GRCh38-2024-A
+
 │   │   ├── fasta
+
 │   │   │   ├── genome.dict
+
 │   │   │   ├── genome.fa
+
 │   │   │   └── genome.fa.fai
+
 │   │   └── reference.json
+
 │   └── ref_vcf_human
+
 │       ├── dbSNP_GRCh38_human.vcf.gz
+
 │       ├── dbSNP_GRCh38_human.vcf.gz.tbi
+
 │       └── editvcf.human.sh
+
 ├── results
+
 │   └── test
+
 │       └── raw
+
 │           ├── test.bam
+
 │           └── test.barcodes.tsv
+
 ├── scripts
+
 │   ├── convert_mtx_to_tsv.py
+
 │   ├── dataset.py
+
 │   ├── filter_bam_by_barcode.py
+
 │   ├── filter_vartrix.py
+
 │   ├── main.py
+
 │   ├── model.py
+
 │   ├── renamer.py
+
 │   ├── requirements.txt
+
 │   ├── retag.py
+
 │   ├── search_hyperparams.py
+
 │   ├── train.py
+
 │   ├── train_wrapper.py
+
 │   └── utils.py
+
 ├── Snakefile
+
 └── variants_DB
     ├── 1000g_pon.hg38.vcf
     ├── AllEditingSites.hg38.txt
