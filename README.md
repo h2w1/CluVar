@@ -26,7 +26,7 @@ from https://drive.google.com/drive/folders/1bsQ4hoIcGslJMSlu_IYB5O3j5I-WFJ70?us
 
 After download files, your CluVar directory is below. please check below tree.
 .
-├── bio_pipeline.sif
+├── bio_pipeline.sif /n
 ├── config
 │   └── config_test.yaml
 ├── envs
