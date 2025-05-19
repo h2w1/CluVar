@@ -11,10 +11,8 @@ conda create -n CluVar-env -c conda-forge mamba snakemake python=3.10
 conda activate CluVar-env 
 ```
 
-
-
-
 clone the recent version of this repository.
+
 
 
 
