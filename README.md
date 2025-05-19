@@ -1,3 +1,7 @@
+# CluVar pipeline
+![image](https://github.com/user-attachments/assets/7237a4e3-35cc-43d7-b697-6adc747c1ce8)
+
+## 1. Setting Environment
 
 
 
