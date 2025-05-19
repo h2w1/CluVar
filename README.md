@@ -15,10 +15,6 @@ clone the recent version of this repository.
 ```bash
 git clone https://github.com/h2w1/CluVar.git
 ```
-
-
-
-
 please download below directories and file on main CluVar directory and keep their name for Snakefile. 
 
 1) reference : human reference genome, reference SNP (dbSNP) 
