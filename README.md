@@ -21,7 +21,7 @@ please download below directories and file on main CluVar directory and keep the
 2) variants_DB : filtering normal, germline variants
 3) results : there is test data input now. if you run your data, all results are saved as run_id directory in results.
 4) bio_pipeline.sif : singularity image file
-
+5) intervals.list :  chromosome number using for variants calling  
 from https://drive.google.com/drive/folders/1bsQ4hoIcGslJMSlu_IYB5O3j5I-WFJ70?usp=drive_link
 
 
