@@ -7,7 +7,7 @@
 
 ## 1. Setting Environment
 
-Create a conda virtual environment for FastTENET.
+Create a conda virtual environment for CluVar.
 
 ```bash
 conda create -n CluVar-env -c conda-forge mamba snakemake python=3.10
