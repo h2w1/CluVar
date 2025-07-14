@@ -2,7 +2,6 @@ library(pheatmap)
 library(gridExtra)
 library(readr)
 library(Matrix)
-library(DENDRO)
 
 
 
