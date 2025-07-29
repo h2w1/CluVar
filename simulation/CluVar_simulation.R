@@ -78,12 +78,8 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) { # alt도 0이 아니고, ref도 0이 아니면   
             if (clades[j] == 1) { # clade가 1인 세포에 대해서 
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
-                BI[i, j] <- 1
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
+                  BI[i, j] <- 1
               } else {
                 ALT[i, j] <- rbinom(1, alt[j], 1 - epi) + rbinom(1, ref[j], epi)
                 BI[i, j] <- 1
@@ -108,12 +104,9 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]가 NA가 아닐 경우
               if (clades[j] == 2) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                    }else{
-                      ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
                   BI[i, j] <- 1
+       
                 } else {
                   ALT[i, j] <- rbinom(1, alt[j], 1 - epi) + rbinom(1, ref[j], epi)
                   BI[i, j] <- 1
@@ -138,12 +131,9 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
         for (j in 1:m) {
           if (!is.na(alt[j])&!is.na(ref[j])) {  # alt[j]가 NA가 아닐 경우
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
-                BI[i, j] <- 1
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
+                  BI[i, j] <- 1
+          
               } else {
                 ALT[i, j] <- rbinom(1, alt[j], 1 - epi) + rbinom(1, ref[j], epi)
                 BI[i, j] <- 1
@@ -170,12 +160,9 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] == 1) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
-                BI[i, j] <- 1
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
+                  BI[i, j] <- 1
+            
               }
               else {
               ALT[i, j] <- rbinom(1, alt[j], 1 - epi) + rbinom(1, ref[j], epi)
@@ -201,11 +188,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] == 2) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
+               ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
                 BI[i, j] <- 1
               }
               else {
@@ -231,11 +214,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] == 3) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
+                ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
                 BI[i, j] <- 1
               }
               else {
@@ -262,11 +241,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j]) & !is.na(ref[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] %in% c(1, 2, 4)) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
+                ALT[i, j] <-  rbinom(1, ref[j], 1 - epi) 
                 BI[i, j] <- 1
               }
               else {
@@ -293,11 +268,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
         for (j in 1:m) {
           if (!is.na(alt[j]) & !is.na(ref[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (alt[j] == 0) {
-              if (runif(1) <= 1 - epi) {
-                ALT[i, j] <- ref[j]
-              }else{
-                ALT[i, j] <- 0
-              }
+             ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
               BI[i, j] <- 1
             }
             else {
@@ -326,12 +297,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           for (j in 1:m) {
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 1) {
-                if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -358,11 +324,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 2) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -389,11 +351,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] == 3) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
+               ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                 BI[i, j] <- 1
               }
               else {
@@ -420,11 +378,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
           if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
             if (clades[j] == 4) {
               if (alt[j] == 0) {
-                if (runif(1) <= 1 - epi) {
-                  ALT[i, j] <- ref[j]
-                }else{
-                  ALT[i, j] <- 0
-                }
+                ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                 BI[i, j] <- 1
               }
               else {
@@ -451,11 +405,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
          if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
            if (clades[j] %in% c(1, 2, 5)) {
              if (alt[j] == 0) {
-               if (runif(1) <= 1 - epi) {
-                 ALT[i, j] <- ref[j]
-               }else{
-                 ALT[i, j] <- 0
-               }
+               ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                BI[i, j] <- 1
              }
              else {
@@ -482,11 +432,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] %in% c(3, 4, 6)) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -512,11 +458,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             for (j in 1:m) {
               if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -543,11 +485,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 1) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                 ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -574,11 +512,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 2) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                 ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -605,11 +539,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 3) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -636,11 +566,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] == 4) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -667,11 +593,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j]) & !is.na(ref[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] %in% c(1, 2, 5)) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -698,11 +620,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
               if (clades[j] %in% c(1, 2, 3, 5, 6)) {
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                  ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
@@ -728,11 +646,7 @@ CluVar_simulation <- function(kprob = NULL, lprob = NULL,
             for (j in 1:m) {
               if (!is.na(alt[j])) {  # alt[j]와 ref[j] 모두 NA가 아닐 경우
                 if (alt[j] == 0) {
-                  if (runif(1) <= 1 - epi) {
-                    ALT[i, j] <- ref[j]
-                  }else{
-                    ALT[i, j] <- 0
-                  }
+                ALT[i, j] <-  rbinom(1, ref[j], 1 - epi)
                   BI[i, j] <- 1
                 }
                 else {
