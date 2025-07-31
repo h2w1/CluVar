@@ -2,7 +2,8 @@
 ![image](https://github.com/user-attachments/assets/5915c4be-ac88-45a0-9a3b-7a3567ef3f0d)
 
 # CluVar detail pipeline 
-<img width="959" height="1433" alt="preprocessing of CuVar" src="https://github.com/user-attachments/assets/55dd5e0e-7909-4bd9-b35f-d22642211e64" />
+<img width="321" height="479" alt="image" src="https://github.com/user-attachments/assets/35db6b8c-ef74-40c3-831f-02d5ea1910c6" />
+
 
 
 
